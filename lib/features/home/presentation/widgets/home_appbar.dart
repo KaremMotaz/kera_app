@@ -21,6 +21,7 @@ class HomeAppbar extends StatelessWidget {
           child: CircleAvatar(
             radius: 24,
             backgroundImage: AssetImage(AppAssets.avatarImage),
+            backgroundColor: Colors.transparent,
           ),
         ),
         const SizedBox(width: 16),
@@ -29,9 +30,8 @@ class HomeAppbar extends StatelessWidget {
           children: [
             Text(
               "محمد أحمد",
-              style: AppStyles.bold22.copyWith(color: AppColors.bodyGray),
+              style: AppStyles.bold20.copyWith(color: AppColors.textBlack),
             ),
-            const SizedBox(height: 4),
             Row(
               children: [
                 Text(
@@ -40,7 +40,7 @@ class HomeAppbar extends StatelessWidget {
                     color: AppColors.bodyGray,
                   ),
                 ),
-                const SizedBox(width: 4),
+                const SizedBox(width: 12),
                 SvgPicture.asset(
                   AppAssets.locationIcon,
                   width: 16,
