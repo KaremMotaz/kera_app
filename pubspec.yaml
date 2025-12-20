@@ -1,6 +1,6 @@
 name: kera_app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_localizations:
+    sdk: flutter
   flutter_bloc: ^9.1.1
   flutter_inner_shadow: ^0.0.1
   flutter_spinkit: ^5.2.2
@@ -28,3 +29,15 @@ flutter:
     - assets/svgs/
     - assets/images/
     - assets/logo/
+
+  fonts:
+    - family: Almarai
+      fonts:
+        - asset: assets/fonts/Almarai/Almarai-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Almarai/Almarai-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Almarai/Almarai-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Almarai/Almarai-Light.ttf
+          weight: 300
