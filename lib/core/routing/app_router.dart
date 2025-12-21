@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:kera_app/features/Booking/presentation/views/booking_view.dart';
 import 'package:kera_app/features/Splash/splash_view.dart';
 import 'package:kera_app/features/app/privacy_policy_view.dart';
 import 'package:kera_app/features/app/terms_and_conditions_view.dart';
@@ -9,6 +10,7 @@ import 'package:kera_app/features/home/presentation/views/book_mark_view.dart';
 import 'package:kera_app/features/home/presentation/views/home_view.dart';
 import 'package:kera_app/features/home/presentation/views/notification_view.dart';
 import 'package:kera_app/features/home/presentation/views/search_view.dart';
+import 'package:kera_app/features/main/presentation/views/main_layout.dart';
 import 'package:kera_app/features/onboarding/onboarding_view.dart';
 import 'package:kera_app/features/profile/presentation/views/profile_view.dart';
 import 'routes.dart';
@@ -16,7 +18,7 @@ import 'routes.dart';
 abstract class AppRouter {
   static GoRouter createRouter() {
     return GoRouter(
-      initialLocation: Routes.homeView,
+      initialLocation: Routes.mainLayout,
       routes: [
         GoRoute(
           path: Routes.splashView,
@@ -47,6 +49,10 @@ abstract class AppRouter {
           builder: (context, state) => const ForgotPasswordView(),
         ),
         GoRoute(
+          path: Routes.mainLayout,
+          builder: (context, state) => const MainLayout(),
+        ),
+        GoRoute(
           path: Routes.homeView,
           builder: (context, state) => const HomeView(),
         ),
@@ -65,6 +71,10 @@ abstract class AppRouter {
         GoRoute(
           path: Routes.searchView,
           builder: (context, state) => const SearchView(),
+        ),
+        GoRoute(
+          path: Routes.bookingView,
+          builder: (context, state) => const BookingView(),
         ),
       ],
     );
