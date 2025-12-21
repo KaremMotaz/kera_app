@@ -8,6 +8,7 @@ import 'package:kera_app/features/auth/presentation/views/register_view.dart';
 import 'package:kera_app/features/home/presentation/views/book_mark_view.dart';
 import 'package:kera_app/features/home/presentation/views/home_view.dart';
 import 'package:kera_app/features/home/presentation/views/notification_view.dart';
+import 'package:kera_app/features/home/presentation/views/search_view.dart';
 import 'package:kera_app/features/onboarding/onboarding_view.dart';
 import 'package:kera_app/features/profile/presentation/views/profile_view.dart';
 import 'routes.dart';
@@ -60,6 +61,10 @@ abstract class AppRouter {
         GoRoute(
           path: Routes.notificationView,
           builder: (context, state) => const NotificationView(),
+        ),
+        GoRoute(
+          path: Routes.searchView,
+          builder: (context, state) => const SearchView(),
         ),
       ],
     );

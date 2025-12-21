@@ -4,7 +4,6 @@ import 'package:kera_app/core/theming/app_colors.dart';
 import 'package:kera_app/core/theming/app_styles.dart';
 import 'package:kera_app/core/widgets/app_text_form_field.dart';
 
-
 class PasswordTextField extends StatefulWidget {
   final TextEditingController passwordController;
 
@@ -38,7 +37,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             },
             icon: Icon(
               isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
-              color: AppColors.brandGreen,
+              color: AppColors.mainGreen,
             ),
           ),
           validator: validatePassword,

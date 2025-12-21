@@ -17,7 +17,7 @@ class AppTextFormField extends StatelessWidget {
     this.textStyle,
     required this.validator,
     this.textInputType,
-    this.prefixIcon,
+    this.prefixIcon, this.onTap, this.readOnly,
   });
   final TextEditingController? controller;
   final EdgeInsetsGeometry? contentPadding;
@@ -31,11 +31,15 @@ class AppTextFormField extends StatelessWidget {
   final TextStyle? textStyle;
   final Function(String?) validator;
   final TextInputType? textInputType;
+  final VoidCallback? onTap;
+  final bool? readOnly;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: AppColors.brandGreen,
+      onTap: onTap,
+      readOnly: readOnly ?? false,
+      cursorColor: AppColors.bodyGray,
       keyboardType: textInputType ?? TextInputType.name,
       controller: controller,
       decoration: InputDecoration(
@@ -54,15 +58,15 @@ class AppTextFormField extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
         focusedBorder:
             focusedBorder ??
-            buildOutLineInputBorder(borderColor: AppColors.lightGrey),
+            buildOutLineInputBorder(borderColor: AppColors.backgroundGrey),
         enabledBorder:
             enabledBorder ??
-            buildOutLineInputBorder(borderColor: AppColors.lightGrey),
+            buildOutLineInputBorder(borderColor: Colors.transparent),
         errorBorder: buildOutLineInputBorder(borderColor: AppColors.darkRed),
         focusedErrorBorder: buildOutLineInputBorder(
           borderColor: AppColors.darkRed,
         ),
-        hintStyle: AppStyles.regular16,
+        hintStyle: AppStyles.regular14.copyWith(color: AppColors.bodyGray),
         hintText: hintText,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
@@ -81,6 +85,6 @@ class AppTextFormField extends StatelessWidget {
 OutlineInputBorder buildOutLineInputBorder({required Color borderColor}) {
   return OutlineInputBorder(
     borderSide: BorderSide(color: borderColor, width: 1.3),
-    borderRadius: BorderRadius.circular(40),
+    borderRadius: BorderRadius.circular(12),
   );
 }

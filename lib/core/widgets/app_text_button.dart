@@ -25,7 +25,7 @@ class AppTextButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
-            color: shadowColor ?? AppColors.brandGreen,
+            color: shadowColor ?? AppColors.mainGreen,
             blurRadius: 0,
             offset: Offset(0, 0),
             spreadRadius: 2,
@@ -57,7 +57,7 @@ class AppTextButton extends StatelessWidget {
               color: Colors.white,
               gradient: withGradient == true
                   ? LinearGradient(
-                      colors: [AppColors.lightGreen, AppColors.brandGreen],
+                      colors: [AppColors.lightGreen, AppColors.mainGreen],
                       stops: const [0.0, 0.75],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,

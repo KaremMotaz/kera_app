@@ -4,7 +4,6 @@ import 'package:kera_app/core/routing/routes.dart';
 import 'package:kera_app/core/theming/app_colors.dart';
 import 'package:kera_app/core/theming/app_styles.dart';
 
-
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
 
@@ -16,7 +15,7 @@ class ForgotPassword extends StatelessWidget {
       },
       child: Text(
         "Forgot password?",
-        style: AppStyles.medium12.copyWith(color: AppColors.brandGreen),
+        style: AppStyles.medium12.copyWith(color: AppColors.mainGreen),
       ),
     );
   }
