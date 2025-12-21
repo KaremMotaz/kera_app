@@ -1,6 +1,6 @@
-import 'package:kera_app/features/home/presentation/widgets/home_book_mark_widget.dart';
-import 'package:kera_app/features/home/presentation/widgets/home_notifications_widget.dart';
-import 'package:kera_app/features/home/presentation/widgets/home_user_details.dart';
+import 'package:kera_app/features/home/presentation/widgets/home_appbar/home_book_mark_widget.dart';
+import 'package:kera_app/features/home/presentation/widgets/home_appbar/home_notifications_widget.dart';
+import 'package:kera_app/features/home/presentation/widgets/home_appbar/home_user_details.dart';
 import 'package:flutter/material.dart';
 
 class HomeAppbar extends StatelessWidget {
