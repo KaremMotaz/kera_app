@@ -9,4 +9,6 @@ class Routes {
   static const String forgotPasswordView = '/forgotPasswordView';
   static const String homeView = '/homeView';
   static const String profileView = '/profileView';
+  static const String bookMarkView = '/bookMarkView';
+  static const String notificationView = '/notificationView';
 }
