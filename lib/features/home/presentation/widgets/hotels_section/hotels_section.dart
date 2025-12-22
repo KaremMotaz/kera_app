@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kera_app/features/home/presentation/widgets/hotels_section/fillter_cards_section.dart';
+import 'package:kera_app/features/home/presentation/widgets/hotels_section/booking_tabs.dart';
+import 'package:kera_app/features/home/presentation/widgets/hotels_section/fillter_hotels_cards_section.dart';
 import 'package:kera_app/features/home/presentation/widgets/hotels_section/hotels_fillters.dart';
-import 'package:kera_app/features/home/presentation/widgets/hotels_section/nearest_hotels_section.dart';
-import 'package:kera_app/features/home/presentation/widgets/hotels_section/recently_booked_section.dart';
 
 class HotelsSection extends StatelessWidget {
   const HotelsSection({super.key});
@@ -14,11 +13,9 @@ class HotelsSection extends StatelessWidget {
         SizedBox(height: 18),
         HotelsFillters(),
         SizedBox(height: 24),
-        FillterCardsSection(),
+        FillterHotelsCardsSection(),
         SizedBox(height: 24),
-        RecentlyBookedSection(),
-        SizedBox(height: 24),
-        NearestHotelsSection(),
+        BookingTabs(),
       ],
     );
   }

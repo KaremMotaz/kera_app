@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:kera_app/features/Booking/presentation/views/booking_view.dart';
+import 'package:kera_app/features/Booking/presentation/views/recently_booked_view.dart';
 import 'package:kera_app/features/Splash/splash_view.dart';
 import 'package:kera_app/features/app/privacy_policy_view.dart';
 import 'package:kera_app/features/app/terms_and_conditions_view.dart';
@@ -11,6 +12,7 @@ import 'package:kera_app/features/home/presentation/views/home_view.dart';
 import 'package:kera_app/features/home/presentation/views/notification_view.dart';
 import 'package:kera_app/features/home/presentation/views/search_view.dart';
 import 'package:kera_app/features/main/presentation/views/main_layout.dart';
+import 'package:kera_app/features/map/presentation/views/map_view.dart';
 import 'package:kera_app/features/onboarding/onboarding_view.dart';
 import 'package:kera_app/features/profile/presentation/views/profile_view.dart';
 import 'routes.dart';
@@ -73,8 +75,16 @@ abstract class AppRouter {
           builder: (context, state) => const SearchView(),
         ),
         GoRoute(
+          path: Routes.recentlyBookedView,
+          builder: (context, state) => const RecentlyBookedView(),
+        ),
+        GoRoute(
           path: Routes.bookingView,
           builder: (context, state) => const BookingView(),
+        ),
+        GoRoute(
+          path: Routes.mapView,
+          builder: (context, state) => const MapView(),
         ),
       ],
     );

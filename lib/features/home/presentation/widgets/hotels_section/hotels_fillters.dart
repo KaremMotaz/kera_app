@@ -34,7 +34,7 @@ class HotelsFillters extends StatelessWidget {
                         vertical: 6,
                         horizontal: 12,
                       ),
-                      margin: const EdgeInsets.only(left: 10),
+                      margin: const EdgeInsets.only(left: 8),
                       decoration: BoxDecoration(
                         color: isSelected ? AppColors.mainGreen : Colors.white,
                         border: Border.all(width: 2, color: AppColors.mainGreen),

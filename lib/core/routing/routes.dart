@@ -14,4 +14,6 @@ class Routes {
   static const String notificationView = '/notificationView';
   static const String searchView = '/searchView';
   static const String bookingView = '/bookingView';
+  static const String recentlyBookedView = '/recentlyBookedView';
+  static const String mapView = '/mapView';
 }

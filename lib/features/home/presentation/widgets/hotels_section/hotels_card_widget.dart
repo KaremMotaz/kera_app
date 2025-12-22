@@ -31,10 +31,7 @@ class HotelsCardWidget extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.transparent,
-                      Colors.black.withAlpha(120),
-                    ],
+                    colors: [Colors.transparent, Colors.black.withAlpha(110)],
                   ),
                 ),
               ),
@@ -72,9 +69,7 @@ class HotelsCardWidget extends StatelessWidget {
                   const SizedBox(height: 6),
                   Text(
                     filteredHotelsModel.location,
-                    style: AppStyles.regular10.copyWith(
-                      color: Colors.white70,
-                    ),
+                    style: AppStyles.regular10.copyWith(color: Colors.white70),
                   ),
                   const SizedBox(height: 8),
                   Row(
@@ -82,15 +77,15 @@ class HotelsCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         "${filteredHotelsModel.price.toInt()} دولار / الليلة",
-                        style:
-                            AppStyles.bold14.copyWith(color: Colors.white),
+                        style: AppStyles.bold14.copyWith(color: Colors.white),
                       ),
                       Row(
                         children: [
                           Text(
                             filteredHotelsModel.rating.toString(),
-                            style: AppStyles.regular14
-                                .copyWith(color: Colors.white),
+                            style: AppStyles.regular14.copyWith(
+                              color: Colors.white,
+                            ),
                           ),
                           const SizedBox(width: 4),
                           const Icon(
