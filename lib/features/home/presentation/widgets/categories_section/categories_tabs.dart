@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kera_app/core/theming/app_colors.dart';
+import 'package:kera_app/core/theming/app_styles.dart';
 import 'package:kera_app/features/home/manager/home_tabs_cubit/home_tabs_cubit.dart';
 
 class CategoriesTabs extends StatelessWidget {
@@ -14,7 +15,7 @@ class CategoriesTabs extends StatelessWidget {
 
         return Row(
           children: List.generate(tabs.length, (index) {
-            final isSelected = index == currentIndex;
+            final bool isSelected = index == currentIndex;
 
             return Expanded(
               child: GestureDetector(
@@ -37,9 +38,8 @@ class CategoriesTabs extends StatelessWidget {
                   child: Center(
                     child: Text(
                       tabs[index],
-                      style: TextStyle(
+                      style: AppStyles.semiBold15.copyWith(
                         color: AppColors.textBlack,
-                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),

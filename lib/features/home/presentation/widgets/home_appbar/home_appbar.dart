@@ -8,18 +8,21 @@ class HomeAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        HomeUserDetails(),
-        const Spacer(),
-        Row(
-          children: [
-            HomeNotificationsWidget(),
-            const SizedBox(width: 8),
-            HomeBookMarkWidget(),
-          ],
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Row(
+        children: [
+          HomeUserDetails(),
+          const Spacer(),
+          Row(
+            children: [
+              HomeNotificationsWidget(),
+              const SizedBox(width: 8),
+              HomeBookMarkWidget(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

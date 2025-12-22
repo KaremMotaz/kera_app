@@ -19,18 +19,33 @@ abstract class AppStyles {
     fontSize: 16,
     fontWeight: FontWeightHelper.regular,
   );
-
+  static const TextStyle bold16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeightHelper.bold,
+  );
 
   static const TextStyle semiBold17 = TextStyle(
     fontSize: 17,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static const TextStyle semiBold15 = TextStyle(
+    fontSize: 15,
     fontWeight: FontWeightHelper.semiBold,
   );
   static const TextStyle medium15 = TextStyle(
     fontSize: 15,
     fontWeight: FontWeightHelper.medium,
   );
+  static const TextStyle bold14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeightHelper.bold,
+  );
   static const TextStyle medium12 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeightHelper.medium,
+  );
+  static const TextStyle regular10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeightHelper.regular,
   );
 }

@@ -26,4 +26,7 @@ class AppAssets {
   static const String searchFilledIcon = 'assets/svgs/search_filled.svg';
   static const String singleBedIcon = 'assets/svgs/single_bed.svg';
   static const String wifiIcon = 'assets/svgs/wifi.svg';
+  static const String hotel1 = 'assets/images/hotel1.jpg';
+  static const String hotel2 = 'assets/images/hotel2.jpg';
+  static const String hotel3 = 'assets/images/hotel3.jpg';
 }
