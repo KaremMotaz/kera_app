@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kera_app/core/helpers/string_extensions.dart';
+import 'package:kera_app/core/extensions/string_extensions.dart';
 import 'package:kera_app/core/theming/app_assets.dart';
 import 'package:kera_app/core/theming/app_colors.dart';
 import 'package:kera_app/core/theming/app_styles.dart';

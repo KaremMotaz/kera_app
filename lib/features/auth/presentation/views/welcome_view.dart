@@ -68,9 +68,17 @@ class WelcomeView extends StatelessWidget {
                           ],
                         ),
                         Text(
-                          "كِراء",
+                          'كِراء',
                           style: AppStyles.extraBold96.copyWith(
-                            color: AppColors.darkGreen,
+                            foreground: Paint()
+                              ..shader = LinearGradient(
+                                colors: [
+                                  AppColors.darkGreen,
+                                  AppColors.lightGreen,
+                                ],
+                                begin: Alignment.centerRight,
+                                end: Alignment.centerLeft,
+                              ).createShader(Rect.fromLTWH(0, 0, 400, 100)),
                           ),
                         ),
                         SizedBox(height: 6),

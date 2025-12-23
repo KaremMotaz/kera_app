@@ -27,7 +27,7 @@ abstract class AppRouter {
     return CustomTransitionPage<T>(
       key: state.pageKey,
       child: child,
-      transitionDuration: const Duration(milliseconds: 1000),
+      transitionDuration: const Duration(milliseconds: 400),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SlideTransition(
           position: Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero)
@@ -42,7 +42,7 @@ abstract class AppRouter {
 
   static GoRouter createRouter() {
     return GoRouter(
-      initialLocation: Routes.splashView,
+      initialLocation: Routes.homeView,
       routes: [
         GoRoute(
           path: Routes.splashView,

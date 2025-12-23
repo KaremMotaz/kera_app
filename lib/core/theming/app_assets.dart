@@ -44,6 +44,7 @@ class AppAssets {
   static const String house1 = 'assets/images/house1.jpg';
   static const String house2 = 'assets/images/house2.jpg';
   static const String house3 = 'assets/images/house3.jpg';
+  static const String house4 = 'assets/images/house4.jpg';
   static const String travelDeals1 = 'assets/images/travel_deals1.jpg';
   static const String travelDeals2 = 'assets/images/travel_deals2.jpg';
   static const String travelDeals3 = 'assets/images/travel_deals3.jpg';

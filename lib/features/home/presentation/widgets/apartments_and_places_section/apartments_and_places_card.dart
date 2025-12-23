@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kera_app/core/helpers/string_extensions.dart';
+import 'package:kera_app/core/extensions/place_type_extension.dart';
+import 'package:kera_app/core/extensions/string_extensions.dart';
 import 'package:kera_app/core/theming/app_assets.dart';
 import 'package:kera_app/core/theming/app_colors.dart';
 import 'package:kera_app/core/theming/app_styles.dart';
-import 'package:kera_app/features/home/data/models/recently_booked_hotel_model.dart';
+import 'package:kera_app/features/home/data/models/apartments_and_places_model.dart';
 import 'package:kera_app/features/home/presentation/widgets/hotels_section/custom_room_feature.dart';
-import 'package:kera_app/features/home/presentation/widgets/hotels_section/feature_divider.dart';
 
 class ApartmentsAndPlacesCard extends StatelessWidget {
-  const ApartmentsAndPlacesCard({super.key, required this.hotel});
-  final RecentlyBookedHotelModel hotel;
+  const ApartmentsAndPlacesCard({super.key, required this.apartmentsAndPlaces});
+  final ApartmentsAndPlacesModel apartmentsAndPlaces;
   @override
   Widget build(BuildContext context) {
     final features = [
-      ("غسيل", AppAssets.restaurantIcon),
-      ("مطبخ", AppAssets.dumbbellIcon),
+      ("غسيل", AppAssets.clockIcon),
+      ("مطبخ", AppAssets.sidebarIcon),
       ("Wi-fi", AppAssets.wifiIcon),
-      ("${hotel.numbersOfBeds} غرف", AppAssets.bedIcon),
+      ("${apartmentsAndPlaces.numbersOfBeds} غرف", AppAssets.bedIcon),
     ];
 
     return Container(
@@ -40,7 +40,10 @@ class ApartmentsAndPlacesCard extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(hotel.imageUrl, fit: BoxFit.cover),
+                  child: Image.asset(
+                    apartmentsAndPlaces.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
 
@@ -48,26 +51,40 @@ class ApartmentsAndPlacesCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(hotel.name, style: AppStyles.bold20),
+                  SizedBox(
+                    width: 90,
+                    child: Text(
+                      apartmentsAndPlaces.name,
+                      style: AppStyles.regular14,
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
+                    ),
+                  ),
                   SizedBox(height: 10),
-                  Text(hotel.location, style: AppStyles.regular14),
+                  Text(
+                    apartmentsAndPlaces.location,
+                    style: AppStyles.regular12.copyWith(
+                      color: AppColors.bodyGray,
+                    ),
+                  ),
                   SizedBox(height: 10),
                   Row(
                     children: [
                       Text(
-                        hotel.rating.toString().toArabicNumbers(),
-                        style: AppStyles.bold14.copyWith(
-                          color: AppColors.mainGreen,
+                        apartmentsAndPlaces.rating.toString().toArabicNumbers(),
+                        style: AppStyles.medium12.copyWith(
+                          color: AppColors.textBlack,
                         ),
                       ),
                       SizedBox(width: 4),
-                      Icon(Icons.star, color: AppColors.textBlack, size: 16),
+                      Icon(Icons.star, color: AppColors.ratingYellow, size: 16),
                       SizedBox(width: 8),
                       Text(
-                        '(${hotel.numbersOfRatings} تقييم)',
+                        '(${apartmentsAndPlaces.numbersOfRatings.toString().toArabicNumbers()}/${apartmentsAndPlaces.peopleRatings.toString().toArabicNumbers()} تقييم)',
                         style: AppStyles.regular12.copyWith(
                           color: AppColors.bodyGray,
                         ),
+                        textDirection: TextDirection.rtl,
                       ),
                     ],
                   ),
@@ -78,8 +95,8 @@ class ApartmentsAndPlacesCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    "${hotel.price.toInt()}\$".toArabicNumbers(),
-                    style: AppStyles.bold24.copyWith(
+                    "${apartmentsAndPlaces.price.toInt()}\$".toArabicNumbers(),
+                    style: AppStyles.semiBold20.copyWith(
                       color: AppColors.mainGreen,
                     ),
                   ),
@@ -90,18 +107,26 @@ class ApartmentsAndPlacesCard extends StatelessWidget {
                       color: AppColors.bodyGray,
                     ),
                   ),
-                  SizedBox(height: 22),
-                  GestureDetector(
-                    onTap: () {},
-                    child: SvgPicture.asset(
-                      AppAssets.bookmarkIcon,
-                      width: 16,
-                      height: 20,
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.mainGray,
-                        BlendMode.srcIn,
+                  SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Text(
+                        apartmentsAndPlaces.typeOfPlace,
+                        style: AppStyles.regular10.copyWith(
+                          color: AppColors.bodyGray,
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 4),
+                      SvgPicture.asset(
+                        apartmentsAndPlaces.typeOfPlace.icon,
+                        width: 16,
+                        height: 20,
+                        colorFilter: const ColorFilter.mode(
+                          AppColors.mainGreen,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -111,17 +136,15 @@ class ApartmentsAndPlacesCard extends StatelessWidget {
           Divider(color: Color(0xffE7E7E7)),
           SizedBox(height: 12),
           Row(
-            children:
-                features
-                    .map(
-                      (feature) => CustomRoomFeature(
-                        featureName: feature.$1,
-                        featureIcon: feature.$2,
-                      ),
-                    )
-                    .expand((widget) => [widget, FeatureDivider()])
-                    .toList()
-                  ..removeLast(),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: features
+                .map(
+                  (feature) => CustomRoomFeature(
+                    featureName: feature.$1,
+                    featureIcon: feature.$2,
+                  ),
+                )
+                .toList(),
           ),
         ],
       ),
