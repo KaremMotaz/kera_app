@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 import 'font_weight_helper.dart';
 
 abstract class AppStyles {
+  static const TextStyle extraBold96 = TextStyle(
+    fontSize: 96,
+    fontWeight: FontWeightHelper.extraBold,
+  );
+  static const TextStyle bold48 = TextStyle(
+    fontSize: 48,
+    fontWeight: FontWeightHelper.bold,
+  );
   static const TextStyle extraBold26 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeightHelper.extraBold,

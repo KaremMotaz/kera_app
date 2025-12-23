@@ -25,7 +25,7 @@ class CategoriesTabs extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 4),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? AppColors.lighterGreen
+                        ? AppColors.moreLighterGreen
                         : Colors.transparent,
                     border: Border.all(
                       width: 2,

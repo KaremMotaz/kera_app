@@ -10,8 +10,6 @@ class LoginWithGoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppTextButton(
-      withGradient: false,
-      shadowColor: Color(0xff07112E).withAlpha((255 * 0.06).toInt()),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

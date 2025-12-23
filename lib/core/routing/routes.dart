@@ -1,6 +1,6 @@
 class Routes {
   static const String splashView = '/';
-  static const String startView = '/startView';
+  static const String welcomeView = '/welcomeView';
   static const String loginView = '/loginView';
   static const String registerView = '/registerView';
   static const String onboardingView = '/onboardingView';

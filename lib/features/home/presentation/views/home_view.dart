@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kera_app/features/home/manager/home_tabs_cubit/home_tabs_cubit.dart';
+import 'package:kera_app/features/home/presentation/widgets/apartments_and_places_section/apartments_and_places_sliver_list.dart';
 import 'package:kera_app/features/home/presentation/widgets/categories_section/categories_section.dart';
 import 'package:kera_app/features/home/presentation/widgets/home_search_text_field/custom_search_text_field.dart';
 import 'package:kera_app/features/home/presentation/widgets/home_appbar/home_appbar.dart';
 import 'package:kera_app/features/home/presentation/widgets/hotels_section/recently_booked_sliver_section.dart';
+import 'package:kera_app/features/home/presentation/widgets/travel_deals_section/travel_deals_sliver_list.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -38,10 +40,15 @@ class HomeView extends StatelessWidget {
                 SliverToBoxAdapter(child: CategoriesSection()),
                 BlocBuilder<HomeTabsCubit, int>(
                   builder: (context, index) {
-                    if (index == 0) {
-                      return RecentlyBookedSliverSection();
-                    } else {
-                      return SliverToBoxAdapter(child: SizedBox.shrink());
+                    switch (index) {
+                      case 0:
+                        return RecentlyBookedSliverSection();
+                      case 1:
+                        return ApartmentsAndPlacesSliverList();
+                      case 2:
+                        return TravelDealsSliverList();
+                      default:
+                        return SliverToBoxAdapter(child: SizedBox.shrink());
                     }
                   },
                 ),

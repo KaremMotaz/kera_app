@@ -1,10 +1,17 @@
 class AppAssets {
+  static const String logoImage = 'assets/images/logo.png';
+  static const String welcomeImage = 'assets/images/welcome_image.jpg';
+  static const String handEmoji = 'assets/images/hand.png';
+  static const String onboarding1 = 'assets/images/onboarding1.jpg';
+  static const String onboarding2 = 'assets/images/onboarding2.jpg';
+  static const String onboarding3 = 'assets/images/onboarding3.jpg';
   static const String googleIcon = 'assets/svgs/google_icon.svg';
   static const String facebookIcon = 'assets/svgs/facebook_icon.svg';
   static const String appleIcon = 'assets/svgs/apple_icon.svg';
   static const String avatarImage = 'assets/images/avatar.jpeg';
   static const String bedIcon = 'assets/svgs/bed.svg';
   static const String bookmarkIcon = 'assets/svgs/bookmark.svg';
+  static const String bookmarkFilledIcon = 'assets/svgs/bookmark_filled.svg';
   static const String calendarIcon = 'assets/svgs/calendar.svg';
   static const String calendar2Icon = 'assets/svgs/calendar2.svg';
   static const String documentIcon = 'assets/svgs/document.svg';
@@ -34,4 +41,18 @@ class AppAssets {
   static const String room2 = 'assets/images/room2.jpeg';
   static const String room3 = 'assets/images/room3.jpg';
   static const String room4 = 'assets/images/room4.jpg';
+  static const String house1 = 'assets/images/house1.jpg';
+  static const String house2 = 'assets/images/house2.jpg';
+  static const String house3 = 'assets/images/house3.jpg';
+  static const String travelDeals1 = 'assets/images/travel_deals1.jpg';
+  static const String travelDeals2 = 'assets/images/travel_deals2.jpg';
+  static const String travelDeals3 = 'assets/images/travel_deals3.jpg';
+  static const String clockIcon = 'assets/svgs/clock.svg';
+  static const String apartmentIcon = 'assets/svgs/apartment.svg';
+  static const String sidebarIcon = 'assets/svgs/sidebar.svg';
+  static const String planeIcon = 'assets/svgs/plane.svg';
+  static const String carIcon = 'assets/svgs/car.svg';
+  static const String peopleIcon = 'assets/svgs/people.svg';
+  static const String apartmentBuildingIcon =
+      'assets/svgs/apartment_building.svg';
 }
