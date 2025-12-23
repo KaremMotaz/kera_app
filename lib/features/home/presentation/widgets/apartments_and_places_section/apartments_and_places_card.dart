@@ -22,13 +22,13 @@ class ApartmentsAndPlacesCard extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.all(20),
-      height: 200,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             children: [
